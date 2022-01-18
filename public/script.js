@@ -248,6 +248,9 @@ function drawArt(ctx) {
   ctx.lineTo(130, -100);
   ctx.stroke();
 
+ctx.save();
+  var timefirst = new Date();
+  ctx.rotate(timefirst.getSeconds() + timefirst.getMilliseconds() / 1000);
   ctx.beginPath();
   ctx.moveTo(40, -60);
   ctx.lineTo(80, 160);
@@ -255,11 +258,15 @@ function drawArt(ctx) {
   ctx.lineTo(-40, -60);
   ctx.lineTo(40, -60);
   ctx.stroke();
+  ctx.restore();
 
-  ctx.save();
+
+
 var time = new Date();
-ctx.rotate(time.getSeconds() + time.getMilliseconds() / 1000);
+ctx.rotate(-(time.getSeconds() + time.getMilliseconds() / 1000));
   ctx.beginPath();
+  ctx.lineWidth = 9;
+  ctx.translate(10, 10);
   ctx.moveTo(150, 40);
   ctx.lineTo(230, 20);
   ctx.lineTo(400, 170);
