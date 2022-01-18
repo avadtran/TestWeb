@@ -231,7 +231,7 @@ function draw() {
 }
 
 function drawArt(ctx) {
-  // Draw triangle
+  var time = new Date();
   ctx.lineWidth = 5;
   ctx.beginPath();
   ctx.moveTo(100, -150);
@@ -240,6 +240,7 @@ function drawArt(ctx) {
   ctx.lineTo(100, -150);
   ctx.stroke();
 
+  ctx.lineWidth = 5;
   ctx.beginPath();
   ctx.moveTo(130, -100);
   ctx.lineTo(300, -220);
@@ -249,8 +250,7 @@ function drawArt(ctx) {
   ctx.stroke();
 
 ctx.save();
-  var timefirst = new Date();
-  ctx.rotate(timefirst.getSeconds() + timefirst.getMilliseconds() / 1000);
+  ctx.rotate(time.getSeconds() + time.getMilliseconds() / 1000);
   ctx.beginPath();
   ctx.moveTo(40, -60);
   ctx.lineTo(80, 160);
@@ -262,10 +262,9 @@ ctx.save();
 
 
 
-var time = new Date();
 ctx.rotate(-(time.getSeconds() + time.getMilliseconds() / 1000));
   ctx.beginPath();
-  ctx.lineWidth = 9;
+  ctx.lineWidth = 5;
   ctx.translate(10, 10);
   ctx.moveTo(150, 40);
   ctx.lineTo(230, 20);
