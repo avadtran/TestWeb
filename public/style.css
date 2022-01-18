@@ -53,3 +53,10 @@
   min-width: 100px;
   min-height: 200px;
 }
+.canvas {
+  width: 900px;
+  height: 500px;
+  border: 3px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+}

@@ -202,3 +202,69 @@ document.getElementById("redButton").addEventListener("click", redButtonClicked)
 document.getElementById("blueButton").addEventListener("click", blueButtonClicked);
 document.getElementById("greenButton").addEventListener("click", greenButtonClicked);
 document.getElementById("yellowButton").addEventListener("click", yellowButtonClicked);
+
+
+/**
+Art Project
+*/
+
+function initializeAnimation() {
+  window.requestAnimationFrame(draw);
+}
+
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+
+  ctx.globalCompositeOperation = 'destination-over';
+  ctx.clearRect(0, 0, 900, 700); // clear canvas
+
+  // Figure out what pen we wanna draw with
+  ctx.fillStyle = 'rgba(0, 153, 255, 1)';
+  ctx.strokeStyle = 'rgba(0, 153, 255, 0.4)';
+
+  ctx.save();
+  ctx.translate(300, 250);
+  drawArt(ctx);
+  ctx.restore();
+  // Call draw when the website is ready
+  window.requestAnimationFrame(draw);
+}
+
+function drawArt(ctx) {
+  // Draw triangle
+  ctx.lineWidth = 5;
+  ctx.beginPath();
+  ctx.moveTo(100, -150);
+  ctx.lineTo(10, 0);
+  ctx.lineTo(200, 0);
+  ctx.lineTo(100, -150);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(130, -100);
+  ctx.lineTo(300, -220);
+  ctx.lineTo(350, -140);
+  ctx.lineTo(180, -30);
+  ctx.lineTo(130, -100);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(40, -60);
+  ctx.lineTo(80, 160);
+  ctx.lineTo(-40, 140);
+  ctx.lineTo(-40, -60);
+  ctx.lineTo(40, -60);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(150, 40);
+  ctx.lineTo(230, 20);
+  ctx.lineTo(400, 170);
+  ctx.lineTo(310, 170);
+  ctx.lineTo(150, 40);
+  ctx.stroke();
+
+
+}
+
+initializeAnimation();
