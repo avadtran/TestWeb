@@ -256,6 +256,9 @@ function drawArt(ctx) {
   ctx.lineTo(40, -60);
   ctx.stroke();
 
+  ctx.save();
+var time = new Date();
+ctx.rotate(time.getSeconds() + time.getMilliseconds() / 1000);
   ctx.beginPath();
   ctx.moveTo(150, 40);
   ctx.lineTo(230, 20);
@@ -263,6 +266,7 @@ function drawArt(ctx) {
   ctx.lineTo(310, 170);
   ctx.lineTo(150, 40);
   ctx.stroke();
+  ctx.restore();
 
 
 }
